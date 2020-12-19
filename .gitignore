@@ -2,3 +2,6 @@ bin
 include
 lib
 pyvenv.cfg
+
+**/*pycache*
+**/.env
