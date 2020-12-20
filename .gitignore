@@ -1,7 +1,22 @@
-.vscode
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+.history/*
+
+# dependencies
+lib
+
+# venv
 bin
 include
-lib
 pyvenv.cfg
 
 **/*pycache*
