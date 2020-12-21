@@ -19,5 +19,9 @@ bin
 include
 pyvenv.cfg
 
+# System Files
+**/.DS_Store
+**/Thumbs.db
+
 **/*pycache*
 **/.env

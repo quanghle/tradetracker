@@ -20,7 +20,6 @@ from graphene_django.views import GraphQLView
 from tradetracker.schema import schema
 
 env = environ.Env(GRAPHIQL=(bool, False))
-environ.Env.read_env()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
