@@ -1,0 +1,32 @@
+version: '3.9'
+services:
+  web:
+    build: .
+    image: web
+    command: >
+      /bin/sh -c 'python manage.py migrate && python manage.py runserver 0.0.0.0:8000'
+    env_file:
+      - .env
+    environment:
+      DEBUG: 'True'
+      GRAPHIQL: 'True'
+      DATABASE_HOST: db
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+  db:
+    image: postgres:alpine
+    env_file:
+      - .env
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT}
+  client:
+    build: ./client/.
+    image: client
+    environment:
+      HOSTNAME: web
+    volumes:
+      - ./client:/app
+    ports:
+      - 80:4200

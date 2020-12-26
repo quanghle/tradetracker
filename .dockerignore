@@ -2,7 +2,8 @@ bin
 include
 lib
 pyvenv.cfg
-client/node_modules
-.vscode/*
-**/*pycache*
-.env*
+client
+**/__pycache__
+**/.*
+docker*
+Dockerfile
