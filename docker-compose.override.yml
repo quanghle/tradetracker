@@ -11,6 +11,7 @@ services:
       DEBUG: 'True'
       GRAPHIQL: 'True'
       DATABASE_HOST: db
+      DATABASE_PORT: 5432
     volumes:
       - .:/code
     ports:
@@ -20,7 +21,7 @@ services:
     env_file:
       - .env
     ports:
-      - ${DATABASE_PORT}:${DATABASE_PORT}
+      - 5432:5432
   client:
     build: ./client/.
     image: client
@@ -28,5 +29,6 @@ services:
       HOSTNAME: web
     volumes:
       - ./client:/app
+      - /app/node_modules
     ports:
       - 80:4200
