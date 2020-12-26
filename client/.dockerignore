@@ -1,4 +1,4 @@
-node_modules
 **/.*
-*.md
-Dockerfile
+**/node_modules
+**/Dockerfile*
+README.md
